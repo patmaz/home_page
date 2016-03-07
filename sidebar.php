@@ -1,10 +1,8 @@
-<div id="sidebar">
-    <h2><?php _e('Categories'); ?></h2>
+<div id="sidebar" ng-controller="mainViewController">
+    
     <ul>
-        <?php wp_list_cats('sort_column=name&optioncount=1&hierarchical=0'); ?>
+        <li><a href="#/">portfolio</a></li>
+        <li ng-repeat="page in pages"><a ng-href="#/page/{{ page.slug }}">{{ page.title }}</a> </li>
     </ul>
-    <h2><?php _e('Archives'); ?></h2>
-    <ul>
-        <?php wp_get_archives('type=monthly'); ?>
-    </ul>
+    
 </div>
