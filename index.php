@@ -1,10 +1,12 @@
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
 
-<div id="main">
-    <div id="content" ng-view>
-
+<section id="main" class="container-fluid">
+    <div id="content" class="row">
+        <div class="col-md-10 col-md-offset-1" ng-view autoscroll="false">
+            
+        </div>
     </div>
-</div>
+</section>
 
 <?php get_footer(); ?>

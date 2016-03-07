@@ -1,0 +1,45 @@
+a {
+    &:hover{
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.appear {
+    display: block !important;
+    
+    @include m {
+        animation: fadein 0.3s linear;   
+    }
+}
+
+@keyframes fadein {
+    from {left: -100px;}
+    to {left: 10px;}
+}
+
+.center-parent{
+    position: relative;
+    height: 100vh;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.logo1{
+    font-family: $font-logo1;
+    color: #FF9500;
+    font-size: 7rem;
+}
+
+.logo2{
+    font-family: $font;
+    background-color: #065AA5;
+    font-size: 15rem;
+    color: black;
+}

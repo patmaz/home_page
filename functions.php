@@ -18,6 +18,10 @@ function my_scripts() {
 		get_stylesheet_directory_uri() . '/js-vendor/angular-resource.min.js'
 	);
     wp_enqueue_script(
+		'my-scripts5',
+		get_stylesheet_directory_uri() . '/js-vendor/ScrollMagic.min.js'
+	);
+    wp_enqueue_script(
 		'my-scripts',
 		get_stylesheet_directory_uri() . '/js/client.js'
 	);

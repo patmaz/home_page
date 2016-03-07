@@ -1,6 +1,27 @@
 (function ($) {
     $(document).ready(function () {
-        console.log(myLocalized.partials);
+        var height = $(window).height();
+        
+        var controller = new ScrollMagic.Controller();
+        // build scene
+        var scene = new ScrollMagic.Scene({triggerHook: "onCenter", duration: height/4})
+                        .setPin("#logo")
+                        .addTo(controller);
+        
+        // menu appear
+        $(window).scroll(function(){
+            
+            var scroll = $(window).scrollTop();
+            var ratio = scroll / height;
+            
+            if(scroll >= (height - 100)){
+                $("#navbar").addClass("appear");
+            } else {
+                $("#navbar").removeClass("appear");
+            }
+            
+        });
+        
     })
 })(jQuery);
 
