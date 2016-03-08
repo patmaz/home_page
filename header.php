@@ -14,9 +14,10 @@
         <section id="header" class="container-fluid">
             <div class="row">
                 <div class="col-md-12 center-parent">
-                    <div id="logo" class="center">
-                        <span class="logo1">just another</span><br />
-                        <span class="logo2">portfolio</span>
+                    <div id="logo" class="animated wobble center">
+                        <span class="logo logo1">just another</span><br />
+                        <span class="logo logo2">portfolio</span><br />
+                        <span class="logo logo3">front end development with a pinch of back end</span>
                     </div>
                 </div>
             </div>

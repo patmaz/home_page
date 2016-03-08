@@ -1,8 +1,26 @@
+html, body {
+    height: 100%;
+    margin: 0 !important;
+}
+
+h1, h2, p {
+    font-family: $font;
+}
+
+h2 {
+    
+}
+
 a {
     &:hover{
         text-decoration: none;
         color: black;
     }
+}
+
+img {
+    margin: 0 auto;
+    display: block;
 }
 
 .appear {
@@ -31,15 +49,56 @@ a {
     text-align: center;
 }
 
+.logo {
+    line-height: 0.7;
+}
+
 .logo1{
     font-family: $font-logo1;
-    color: #FF9500;
-    font-size: 7rem;
+    color: $orange;
+    font-size: (10rem/2);
+    @inlude s {
+        font-size: (15rem/2);
+    }
+    @include m {
+        font-size: (20rem/2);
+    }
+    @include l {
+        font-size: (25rem/2);
+    }
 }
 
 .logo2{
     font-family: $font;
-    background-color: #065AA5;
-    font-size: 15rem;
-    color: black;
+    color: $blue;
+    font-size: 10rem;
+    
+    @inlude s {
+        font-size: (15rem);
+    }
+    @include m {
+        font-size: (20rem);
+    }
+    @include l {
+        font-size: (25rem);
+    }
+}
+
+.logo3{
+    font-family: $font;
+    color: $orange;
+    font-size: (10rem/7);
+    @inlude s {
+        font-size: (15rem/7);
+    }
+    @include m {
+        font-size: (20rem/7);
+    }
+    @include l {
+        font-size: (25rem/7);
+    }
+}
+
+.links-item {
+    display: inline-block;
 }
