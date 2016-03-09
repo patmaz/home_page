@@ -1,3 +1,7 @@
+html{
+    overflow-x: hidden;
+}
+
 html, body {
     height: 100%;
     margin: 0 !important;
@@ -23,6 +27,10 @@ img {
     display: block;
 }
 
+.hide {
+    display: none;
+}
+
 .appear {
     display: block !important;
     
@@ -46,6 +54,14 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.center-down {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
     text-align: center;
 }
 
@@ -97,6 +113,12 @@ img {
     @include l {
         font-size: (25rem/7);
     }
+}
+
+.arrow-down {
+    color: $orange;
+    font-size: 10rem;
+    cursor: pointer;
 }
 
 .links-item {

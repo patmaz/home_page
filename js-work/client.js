@@ -2,15 +2,15 @@
     $(document).ready(function () {
         var height = $(window).height();
         
+        //scroll magic
         var controller = new ScrollMagic.Controller();
         // build scene
         var scene = new ScrollMagic.Scene({triggerHook: "onCenter", duration: height/4})
                         .setPin("#logo")
                         .addTo(controller);
         
-        // menu appear
         $(window).scroll(function(){
-            
+            // menu appear
             var scroll = $(window).scrollTop();
             var ratio = scroll / height;
             
@@ -19,7 +19,18 @@
             } else {
                 $("#navbar").removeClass("appear");
             }
+            // down-arrwo disappear
+            if(scroll > 50){
+                $("#down-arrow").addClass("hide");
+            } else {
+                $("#down-arrow").removeClass("hide");
+            }
             
+        });
+        
+        //smooth scroll
+        $("#down-arrow").click(function(e){
+            $(window).scrollTo($("#main"), 800); 
         });
         
     })

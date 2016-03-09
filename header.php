@@ -19,6 +19,7 @@
                         <span class="logo logo2">portfolio</span><br />
                         <span class="logo logo3">front end development with a pinch of back end</span>
                     </div>
+                    <span id="down-arrow" class="genericon genericon-expand animated bounce infinite center-down arrow-down"></span>
                 </div>
             </div>
         </section>

@@ -22,6 +22,10 @@ function my_scripts() {
 		get_stylesheet_directory_uri() . '/js-vendor/ScrollMagic.min.js'
 	);
     wp_enqueue_script(
+		'my-scripts6',
+		get_stylesheet_directory_uri() . '/js-vendor/jquery.scrollTo.min.js'
+	);
+    wp_enqueue_script(
 		'my-scripts',
 		get_stylesheet_directory_uri() . '/js/client.js'
 	);
