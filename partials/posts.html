@@ -1,7 +1,10 @@
-<div ng-repeat="post in posts">
+<h1 class="center-txt">PORTFOLIO</h1>
+<span class="genericon genericon-code separator"></span>
+<div class="post" ng-repeat="post in posts">
    <h2>{{ post.title }}</h2>
-   <ul>
-       <li ng-repeat="tag in post.tags">{{ tag.title }}</li>
+   <ul class="tags">
+       <li class="tags-tag" ng-repeat="tag in post.tags">{{ tag.title }}</li>
    </ul>
    <div ng-bind-html="TrustDangerousSnippet(post.content)"></div>
+   <span class="genericon genericon-dot separator"></span>
 </div>

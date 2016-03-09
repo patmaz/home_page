@@ -1,26 +1,44 @@
 (function ($) {
+
+    var height = $(window).height();
+
+    //refresh on resize
+    $(window).resize(function () {
+//        setTimeout(
+//            function () {
+//                window.location.reload();
+//            },
+//            1);
+    });
+    
+    function scrollToThis(target, speed) {
+        $(window).scrollTo($(target), speed);
+    }
+
+    $(window).load(function () {
+
+        (function () {
+            setTimeout(displayContent, 500);
+        })();
+
+        function displayContent() {
+            console.log("window loaded");
+            $("#loading").css("display", "none");
+            $("#wrapper").css("visibility", "visible");
+
+            //scroll magic
+            var controller = new ScrollMagic.Controller();
+            // build scene
+            var scene = new ScrollMagic.Scene({
+                    triggerHook: "onCenter",
+                    duration: height / 4
+                })
+                .setPin("#logo")
+                .addTo(controller);
+        }
+    });
+
     $(document).ready(function () {
-        
-        //refresh on resize
-        $(window).resize(function () {
-            setTimeout(
-                function () {
-                    window.location.reload();
-                },
-                1);
-        });
-
-        var height = $(window).height();
-
-        //scroll magic
-        var controller = new ScrollMagic.Controller();
-        // build scene
-        var scene = new ScrollMagic.Scene({
-                triggerHook: "onCenter",
-                duration: height / 4
-            })
-            .setPin("#logo")
-            .addTo(controller);
 
         $(window).scroll(function () {
             // menu icon appear
@@ -43,11 +61,11 @@
 
         //smooth scroll
         $("#down-arrow").click(function (e) {
-            $(window).scrollTo($("#main"), 800);
+            scrollToThis("#main", 800);
         });
 
         $(".links").on("click", ".links-item", function (e) {
-            $(window).scrollTo($("#main"), 800);
+            scrollToThis("#main", 800);
             $("#navbar").fadeOut(200);
         });
 

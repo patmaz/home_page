@@ -1,4 +1,12 @@
+#loading{
+	display: block;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(89, 91, 91, 0.9) url(images/cogload.png) center center no-repeat;
+}
+
 #wrapper {
+    visibility: hidden;
     height: 100%;
     position: relative;
     z-index: 1;

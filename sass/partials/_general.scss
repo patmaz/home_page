@@ -11,8 +11,29 @@ h1, h2, p {
     font-family: $font;
 }
 
+p {
+    font-size: 2rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5rem;
+    @include m {
+        font-size: 7rem;
+    }
+}
+
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    @include m {
+        font-size: 5rem;
+    }
+}
+
 a {
-    color: black;
+    color: #483e2d;
+    text-decoration: underline;
     &:hover{
         text-decoration: none;
     }
@@ -65,6 +86,10 @@ img {
     text-align: center;
 }
 
+.center-txt {
+    text-align: center;
+}
+
 .logo {
     line-height: 0.7;
 }
@@ -72,12 +97,12 @@ img {
 .logo1{
     font-family: $font-logo1;
     color: $orange;
-    font-size: (10rem/2);
+    font-size: (7rem/2);
     @inlude s {
-        font-size: (15rem/2);
+        font-size: (12rem/2);
     }
     @include m {
-        font-size: (20rem/2);
+        font-size: (15rem/2);
     }
     @include l {
         font-size: (25rem/2);
@@ -87,13 +112,13 @@ img {
 .logo2{
     font-family: $font;
     color: $blue;
-    font-size: 10rem;
+    font-size: 7rem;
     
     @inlude s {
-        font-size: (15rem);
+        font-size: (12rem);
     }
     @include m {
-        font-size: (20rem);
+        font-size: (15rem);
     }
     @include l {
         font-size: (25rem);
@@ -103,12 +128,12 @@ img {
 .logo3{
     font-family: $font;
     color: $orange;
-    font-size: (10rem/7);
+    font-size: (7rem/7);
     @inlude s {
-        font-size: (15rem/7);
+        font-size: (12rem/7);
     }
     @include m {
-        font-size: (20rem/7);
+        font-size: (15rem/7);
     }
     @include l {
         font-size: (25rem/7);
@@ -132,4 +157,25 @@ img {
     text-transform: uppercase;
     border-bottom: 1px solid black;
     font-family: $font;
+    text-decoration: none;
+}
+
+.separator {
+    font-size: 3rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.tags {
+    text-align: center;
+}
+
+.tags-tag {
+    font-family: $font;
+    color: $blue;
+    border: 1px solid $orange;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 0 1rem;
+    padding: 5px;
 }
