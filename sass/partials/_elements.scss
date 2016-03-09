@@ -1,6 +1,7 @@
 #wrapper {
     height: 100%;
     position: relative;
+    z-index: 1;
 }
 
 #header{
@@ -14,21 +15,30 @@
 }
 
 #navbar {
+    
+    display: none;
     position: fixed;
-    display: block;
-    
     top: 0;
-    left: 0;
-    width: 100%;
-    border: 1px solid black;
-    border-radius: 2px;
-    
-    @include m {
-        top: 10px;
-        left: 10px;
-        width: 10rem;
-        display: none;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background-color: $orange;
+}
+
+#menu-icon {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: none;
+    z-index: 100;
+    cursor: pointer;
+    span{
+        font-size: 5rem;
     }
+}
+
+#close-icon {
+    cursor: pointer;
 }
 
 #footer{

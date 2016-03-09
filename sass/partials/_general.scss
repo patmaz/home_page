@@ -11,20 +11,20 @@ h1, h2, p {
     font-family: $font;
 }
 
-h2 {
-    
-}
-
 a {
+    color: black;
     &:hover{
         text-decoration: none;
-        color: black;
     }
 }
 
 img {
     margin: 0 auto;
     display: block;
+}
+
+.font-size-5 {
+    font-size: 5rem;
 }
 
 .hide {
@@ -121,6 +121,15 @@ img {
     cursor: pointer;
 }
 
+.links{
+    margin: 0;
+}
+
 .links-item {
-    display: inline-block;
+    display: block;
+    text-align: center;
+    padding: 2rem 1rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+    font-family: $font;
 }
