@@ -1,0 +1,6 @@
+<h2>{{ post.title }}</h2>
+<ul class="tags">
+    <li class="tags-tag" ng-repeat="tag in post.tags">{{ tag.title }}</li>
+</ul>
+<div ng-bind-html="trustDangerousSnippet({snippet: post.content})"></div>
+<span class="genericon genericon-dot separator"></span>

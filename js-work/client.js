@@ -4,13 +4,13 @@
 
     //refresh on resize
     $(window).resize(function () {
-//        setTimeout(
-//            function () {
-//                window.location.reload();
-//            },
-//            1);
+        //        setTimeout(
+        //            function () {
+        //                window.location.reload();
+        //            },
+        //            1);
     });
-    
+
     function scrollToThis(target, speed) {
         $(window).scrollTo($(target), speed);
     }
@@ -84,8 +84,10 @@
     })
 })(jQuery);
 
+// AngularJS App
 var app = angular.module("app", ["ngResource", "ngRoute"]);
 
+//routing
 app.config(["$routeProvider", function ($routeProvider) {
 
     $routeProvider
@@ -103,9 +105,10 @@ app.config(["$routeProvider", function ($routeProvider) {
         });
 }]);
 
+//posts
 app.controller("mainViewController", ["$scope", "$http", "$sce", "$routeParams", function ($scope, $http, $sce, $routeParams) {
 
-    $scope.TrustDangerousSnippet = function (snippet) {
+    $scope.trustDangerousSnippet = function (snippet) {
         return $sce.trustAsHtml(snippet);
     };
 
@@ -119,9 +122,10 @@ app.controller("mainViewController", ["$scope", "$http", "$sce", "$routeParams",
 
 }]);
 
+//single pages
 app.controller("singlePage", ["$scope", "$http", "$sce", "$routeParams", function ($scope, $http, $sce, $routeParams) {
 
-    $scope.TrustDangerousSnippet = function (snippet) {
+    $scope.trustDangerousSnippet = function (snippet) {
         return $sce.trustAsHtml(snippet);
     };
 
@@ -138,3 +142,30 @@ app.controller("singlePage", ["$scope", "$http", "$sce", "$routeParams", functio
     });
 
 }]);
+
+//directives
+app.directive("myPost", function () {
+    return {
+        templateUrl: myLocalized.partials + 'post.html',
+        replace: false,
+        restrict: "AE",
+        scope: {
+            post: "=",
+            trustDangerousSnippet: "&"
+        },
+        link: function (scope, elem, attrs) {
+            var bottomOfElement = $(elem).offset().top + $(elem).height();
+                var bottomOfPage = $(window).scrollTop() + $(window).height();
+                if (bottomOfElement < bottomOfPage) {
+                    $(elem).addClass("animated fadeInUp");
+                }
+            $(window).scroll(function (e) {
+                var bottomOfElement = $(elem).offset().top + $(elem).height();
+                var bottomOfPage = $(window).scrollTop() + $(window).height();
+                if (bottomOfElement < bottomOfPage) {
+                    $(elem).addClass("animated fadeInUp");
+                }
+            });
+        }
+    }
+});
