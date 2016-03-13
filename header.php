@@ -12,7 +12,7 @@
 </head>
 
 <body ng-app="app">
-    <div id="loading">loading</div>
+    <div id="loading"></div>
     <div id="wrapper">
         <section id="header" class="container-fluid">
             <div class="row">
