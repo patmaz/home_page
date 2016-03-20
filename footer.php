@@ -4,7 +4,7 @@
             &copy; patmaz
         </div>
         <div class="col-xs-2 col-md-3">
-            
+
         </div>
         <div class="col-xs-5 col-md-3">
             <a href="https://github.com/patmaz" target="_blank"><span class="genericon genericon-github font-size-3"></span></a>

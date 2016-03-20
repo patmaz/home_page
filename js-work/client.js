@@ -155,14 +155,14 @@ app.directive("myPost", function () {
         },
         link: function (scope, elem, attrs) {
             var bottomOfElement = $(elem).offset().top + $(elem).height();
-                var bottomOfPage = $(window).scrollTop() + $(window).height();
-                if (bottomOfElement < bottomOfPage) {
-                    $(elem).addClass("animated fadeInUp");
-                }
+            var bottomOfPage = $(window).scrollTop() + $(window).height();
+            if ((bottomOfElement-150) < bottomOfPage) {
+                $(elem).addClass("animated fadeInUp");
+            }
             $(window).scroll(function (e) {
                 var bottomOfElement = $(elem).offset().top + $(elem).height();
                 var bottomOfPage = $(window).scrollTop() + $(window).height();
-                if (bottomOfElement < bottomOfPage) {
+                if ((bottomOfElement-150) < bottomOfPage) {
                     $(elem).addClass("animated fadeInUp");
                 }
             });
